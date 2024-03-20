@@ -9,8 +9,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.amaro.applistacurso.R;
+import devandroid.amaro.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    Pessoa pessoa;
+    Pessoa outraPessoa;
+
+    String dadosPessoa;
+    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +29,39 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        pessoa = new Pessoa();
+        outraPessoa = new Pessoa();
+
+        pessoa.setPrimeiroNome("Amaro");
+        pessoa.setSobrenome("Neto");
+        pessoa.setCursoDesejado("Aaaaaaa");
+        pessoa.setTelefone("888888888");
+
+        outraPessoa.setPrimeiroNome("Rivet");
+        outraPessoa.setSobrenome("Little");
+        outraPessoa.setCursoDesejado("Math");
+        outraPessoa.setTelefone("989999999");
+
+        dadosPessoa = "Primeiro Nome: ";
+        dadosPessoa += pessoa.getPrimeiroNome();
+        dadosPessoa += " Sobrenome: ";
+        dadosPessoa += pessoa.getSobrenome();
+        dadosPessoa += " Curso: ";
+        dadosPessoa += pessoa.getCursoDesejado();
+        dadosPessoa += " Telefone: ";
+        dadosPessoa += pessoa.getTelefone();
+
+        dadosOutraPessoa = "Primeiro Nome: ";
+        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
+        dadosOutraPessoa += " Sobrenome: ";
+        dadosOutraPessoa += outraPessoa.getSobrenome();
+        dadosOutraPessoa += " Curso: ";
+        dadosOutraPessoa += outraPessoa.getCursoDesejado();
+        dadosOutraPessoa += " Telefone: ";
+        dadosOutraPessoa += outraPessoa.getTelefone();
+
+
+        int parada=0;
     }
 }
